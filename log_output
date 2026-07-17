@@ -1,0 +1,111 @@
+[2026-07-17 17:33:59 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-coverage' 'functional' '+UVM_TESTNAME=bist_random_test' -uvmnocdnsextra -uvmhome $UVM_HOME $UVM_HOME/src/uvm_macros.svh design.sv testbench.sv  
+TOOL:	xrun	25.03-s001: Started on Jul 17, 2026 at 13:34:00 EDT
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+	Top level design units:
+		uvm_pkg
+		apb_pkg
+		$unit_0x67f934e9
+		top_tb
+xmelab: *W,CGPIDF: Covergroup "per_instance" option , by default, is set as 0.
+xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+Loading snapshot worklib.top_tb:sv .................... Done
+SVSEED default: 1
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium25.03/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (25.03-s001)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./testbench.sv, line = 687, pos = 12
+           Scope: top_tb
+            Time: 0 FS + 0
+
+UVM_INFO @ 0: reporter [RNTST] Running test bist_random_test...
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(605) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                         Type                    Size  Value
+----------------------------------------------------------------
+uvm_test_top                 bist_random_test        -     @1611
+  env                        bist_env                -     @1689
+    agt                      apb_agent               -     @1728
+      drv                    apb_driver              -     @2658
+        rsp_port             uvm_analysis_port       -     @2758
+        seq_item_port        uvm_seq_item_pull_port  -     @2708
+      mon                    apb_monitor             -     @1926
+        ap                   uvm_analysis_port       -     @1976
+      sqr                    apb_sequencer           -     @2007
+        rsp_export           uvm_analysis_export     -     @2067
+        seq_item_export      uvm_seq_item_pull_imp   -     @2627
+        arbitration_queue    array                   0     -    
+        lock_queue           array                   0     -    
+        num_last_reqs        integral                32    'd1  
+        num_last_rsps        integral                32    'd1  
+    cov                      bist_coverage           -     @1842
+      analysis_imp           uvm_analysis_imp        -     @1892
+    sb                       bist_scoreboard         -     @1759
+      item_collected_export  uvm_analysis_imp        -     @1809
+----------------------------------------------------------------
+
+UVM_INFO testbench.sv(154) @ 45: uvm_test_top.env.agt.sqr@@seq [SEQ] Starting BIST random sequence with 40 txns
+UVM_INFO testbench.sv(404) @ 1065: uvm_test_top.env.sb [SB] BIST PASS observed, total pass=1
+UVM_INFO testbench.sv(404) @ 1095: uvm_test_top.env.sb [SB] BIST PASS observed, total pass=2
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 1245: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO testbench.sv(465) @ 1245: uvm_test_top.env.cov [COVERAGE] Functional Coverage = 100.00%
+UVM_INFO testbench.sv(414) @ 1245: uvm_test_top.env.sb [SB] Final Scoreboard Summary: PASS=2 FAIL=0
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(851) @ 1245: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    9
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[COVERAGE]     1
+[RNTST]     1
+[SB]     3
+[SEQ]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+
+Simulation complete via $finish(1) at time 1245 NS + 66
+/xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+xmsim: *W,CGDEFN: Default name "worklib.uvm_pkg::.cg" will be generated for covergroup instance "cg" as the name of the covergroup instance is not specified explicitly: ./testbench.sv, 422.
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  top_tb(top_tb)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_00000000_77384f74.ucm
+  data               :  ./cov_work/scope/test/icc_00000000_77384f74.ucd
+TOOL:	xrun	25.03-s001: Exiting on Jul 17, 2026 at 13:34:09 EDT  (total: 00:00:09)
+Finding VCD file...
+./dump.vcd
+[2026-07-17 17:34:10 UTC] Opening EPWave...
+Done
